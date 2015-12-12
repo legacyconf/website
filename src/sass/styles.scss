@@ -1,0 +1,17 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+$blue: #224FBC;
+$light-blue: lighten($blue, 25%);
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $light-blue;
+}
+
+.form-inline {
+  .form-group {
+    margin: 3px;
+  }
+}
