@@ -15,3 +15,11 @@ body {
     margin: 3px;
   }
 }
+
+nav.navbar-fixed-bottom {
+  background-color: $blue;
+
+  .navbar-brand {
+	color: white;
+  }
+}
