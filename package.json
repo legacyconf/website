@@ -12,7 +12,7 @@
     "gulp-watch": "^4.3.5"
   },
   "scripts": {
-    "prepublish": "gulp templates"
+    "prepublish": "gulp"
   },
   "repository": {
     "type": "git",
