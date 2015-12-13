@@ -19,6 +19,13 @@ gulp.task('templates', function() {
 });
 
 gulp.task('styles', function() {
+  // Bootstrap base
+  gulp.src('./lib/bootstrap-theme/dist/toolkit-startup.min.*')
+    .pipe(gulp.dest('./build/css/'));
+  gulp.src('./lib/bootstrap-theme/dist/toolkit.min.js*')
+    .pipe(gulp.dest('./build/js/'));
+
+  // Customisations
   gulp.src(styles)
     .pipe(sass().on('error', sass.logError))
     .pipe(minify())
