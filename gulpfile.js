@@ -6,19 +6,28 @@ var gulp = require('gulp'),
 
 var templates = './src/templates/**/*.jade';
 var styles = './src/sass/**/*.scss';
+var images = [
+  './img/**/*.jpg',
+  './img/**/*.png'
+];
 
 gulp.task('templates', function() {
   gulp.src(templates)
     .pipe(jade())
     .pipe(minify())
-    .pipe(gulp.dest('./build/'))
+    .pipe(gulp.dest('./build/'));
 });
 
 gulp.task('styles', function() {
   gulp.src(styles)
     .pipe(sass().on('error', sass.logError))
     .pipe(minify())
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./build/css/'));
+});
+
+gulp.task('images', function() {
+  gulp.src(images)
+    .pipe(gulp.dest('./build/img/'));
 });
 
 gulp.task('watch', function() {
@@ -35,7 +44,7 @@ gulp.task('dev', function() {
   gulp.src(styles)
     .pipe(watch(styles, {verbose: true}))
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('default', ['templates', 'styles']);
+gulp.task('default', ['templates', 'styles', 'images']);
