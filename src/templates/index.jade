@@ -1,23 +1,33 @@
+- var stylesheets = ['./css/bootstrap.min.css', './css/toolkit-startup.min.css', './css/styles.css'];
+- var scripts = ['./js/jquery.min.js', './js/toolkit.min.js'];
 doctype html
 html(lang="en")
   head
-    title="Legacy Code Conf"
-    link(
-      rel="stylesheet"
-	    type="text/css"
-	    href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
-    // link(
-    //  rel="stylesheet"
-    //  type="text/css"
-    //  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css")
-    link(
-      rel="stylesheet"
-      type="text/css"
-      href="./css/styles.css")
+    title="Legacy Conf 2016 - 8 October 2016 - Cambridge, UK - The world's first conference dedicated to defeating Legacy Code"
+    for stylesheet in stylesheets
+      link(rel="stylesheet" href=stylesheet)
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width,initial-scale=1.0")
   body
-    h1 Legacy Code Conf
-    nav(class="navbar navbar-default navbar-fixed-bottom"
-        role="navigation")
+    div.stage
+      div#carousel.content-block
+        nav.navbar.navbar-default(role="navigation")
+          div.spacer
+            div.navbar-header
+              span.navbar-brand="LegacyConf"
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a(href="/about")="About"
+                li
+                  a(href="/sponsors")="Sponsors"
+        div
+          div.spacer
+            h1 Legacy Code Conf
+      div.content-block
+    nav(class="navbar navbar-default navbar-fixed-bottom")
       div.navbar-header
         span.navbar-brand="Register your interest"
       include ./partials/mailing-list-signup.jade
+    for script in scripts
+      script(src=script)
