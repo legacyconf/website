@@ -3,3 +3,5 @@
 node_modules
 build
 *.orig
+lib/bootstrap-theme/*
+!lib/bootstrap-theme/dist/*
