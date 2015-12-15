@@ -1,4 +1,4 @@
-- var stylesheets = ['./css/bootstrap.min.css', './css/toolkit-startup.min.css', './css/styles.css'];
+- var stylesheets = ['https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600', './css/bootstrap.min.css', './css/toolkit-startup.min.css', './css/styles.css'];
 - var scripts = ['./js/jquery.min.js', './js/toolkit.min.js'];
 doctype html
 html(lang="en")
@@ -10,21 +10,15 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width,initial-scale=1.0")
   body
-    div.stage
-      div#carousel.content-block
-        nav.navbar.navbar-default(role="navigation")
-          div.spacer
-            div.navbar-header
-              span.navbar-brand="LegacyConf"
-              ul.nav.navbar-nav.navbar-right
-                li
-                  a(href="/about")="About"
-                li
-                  a(href="/sponsors")="Sponsors"
-        div
-          div.spacer
-            h1 Legacy Code Conf
-      div.content-block
+    div#stage.stage
+      button.btn.btn-link.stage-toggle(data-target=".stage", data-toggle="stage")
+        span.icon.icon-menu="Menu"
+      include ./partials/sidebar.jade
+
+      div#carousel.block.block-fill-height
+        include ./partials/navbar.jade
+      include ./partials/carousel-block.jade
+      div.block.block-inverse.text-center
     nav(class="navbar navbar-default navbar-fixed-bottom")
       div.navbar-header
         span.navbar-brand="Register your interest"
