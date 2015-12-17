@@ -7,10 +7,12 @@ form#mc-embedded-subscribe-form.navbar-form.form-inline(
      novalidate)
   div.form-group
     label.sr-only(for="mce-EMAIL")="Email Address"
+      span.asterisk="*"
     input#mce-EMAIL.form-control(
           type="email"
           name="EMAIL"
-          placeholder="charlie.rogers@example.com")
+          placeholder="charlie.rogers@example.com"
+          required)
   div.form-group
     label.sr-only(for="mce-FNAME")="First Name"
     input#mce-FNAME.form-control(
@@ -26,7 +28,7 @@ form#mc-embedded-subscribe-form.navbar-form.form-inline(
   div.form-group
     label.sr-only(for="mce-INTEREST")="Interest"
       span.asterisk="*"
-    select#mce-INTEREST.form-control(name="INTEREST")
+    select#mce-INTEREST.form-control(name="INTEREST" required)
       option(value="")="Please select..."
       option(value="Attendee")="Attendee"
       option(value="Sponsor (Vendor)")="Sponsor (Vendor)"
