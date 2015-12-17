@@ -6,20 +6,6 @@
 }
 
 
-/* header block */
-.app-graph {
-  width: 150%;
-  position: absolute;
-  right: 0;
-  bottom: -40px;
-}
-@media (min-width: 768px) {
-  .app-graph {
-    width: 100%;
-    bottom: 0;
-  }
-}
-
 #carousel {
   background: url('../img/seventies.jpg') top left;
   background-size: cover;
