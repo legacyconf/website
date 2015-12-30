@@ -37,21 +37,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest('./build/img/'));
 });
 
-gulp.task('watch', function() {
-  var sources = [templates, styles];
-  gulp.src(sources)
-    .pipe(watch(sources));
-});
-
 gulp.task('dev', function() {
-  gulp.src(templates)
-    .pipe(watch(templates, {verbose: true}))
-    .pipe(jade())
-    .pipe(gulp.dest('./build/'));
-  gulp.src(styles)
-    .pipe(watch(styles, {verbose: true}))
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./build/css/'));
+  gulp.watch(templates, ['templates'], {verbose: true});
+  gulp.watch(styles, ['styles'], {verbose: true});
+  gulp.watch(images, ['images'], {verbose: true});
 });
 
-gulp.task('default', ['templates', 'styles', 'images']);
+gulp.task('build', ['templates', 'styles', 'images']);
+
+gulp.task('default', ['dev']);
